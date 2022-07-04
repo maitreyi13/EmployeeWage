@@ -1,2 +1,2 @@
 # EmployeeWage
-Welcome to Employee wage problem
+Welcome to Employee Wage Computation Program
