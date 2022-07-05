@@ -1,12 +1,17 @@
+import java.lang.*;
 public class EmployeeWage {
-
     public static void main(String[] args) {
-        int attendance = (int) Math.floor(Math.random() * 10) % 3;
-        if (attendance == 0)
-            System.out.println("Employee is absent");
-        else if (attendance == 1)
-            System.out.println("Employee is present");
+        int attfull = 1;
+        int  wph = 20;
+        int emphrs ,empwage;
+        double a = Math.floor(Math.random() * 10) % 2;
+        if (a == attfull)
+            emphrs = 8;
         else
-            System.out.println("Employee is present for the Half day");
+            emphrs = 0;
+
+        empwage = emphrs * wph;
+        System.out.println("Daily wage for full time employee : "+empwage);
     }
+
 }
