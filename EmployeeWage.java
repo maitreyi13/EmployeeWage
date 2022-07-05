@@ -6,7 +6,7 @@ public class EmployeeWage {
         public static final int wdm = 20;
         public static final int maxhrs = 100;
 
-        public static void main(String[] args) {
+    public void EmpWage() {
             int emphrs; int totaldays = 0; int totalhrs = 0;
             while (totaldays<wdm && totalhrs<=maxhrs ) {
                 totaldays++;
