@@ -1,15 +1,15 @@
 import java.lang.Math;
 public class EmployeeWage {
     public static void main(String[] args){
-    
-        double a = Math.floor(Math.random() * 10) % 3;
+        int attfull = 1;
+        // generate random number
+        double a = Math.floor(Math.random() * 10) % 2;
 
-        if(a == 0){
+        if(a == attfull){
             System.out.println("Employee is Present");
-        }else if( a == 1) {
+        }else {
             System.out.println("Employee is Absent");
-        }else
-            System.out.println("Employee is present for the Half day");
+        }
 
     }
 }
