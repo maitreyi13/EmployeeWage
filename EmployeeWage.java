@@ -2,25 +2,34 @@ import java.lang.*;
 public class EmployeeWage {
         public static final int attpart = 1;
         public static final int attfull = 2;
-        public static final int wph = 20;
-        public static final int wdm = 20;
-        public static final int maxhrs = 100;
 
-    public void EmpWage() {
-            int emphrs; int totaldays = 0; int totalhrs = 0;
+    public void EmpWage(int wph,int empfullhrs, int empparthrs, int wdm, int maxhrs ) {
+
+         int totaldays = 0; int totalhrs = 0;int dailyWages;int MonthlyWages = 0;
             while (totaldays<wdm && totalhrs<=maxhrs ) {
                 totaldays++;
-                int a = (int) Math.floor(Math.random() * 10) % 3;
-                emphrs = switch (a) {
-                    case attfull -> 8;
-                    case attpart -> 4;
-                    default -> 0;
-                };
-                totalhrs += emphrs;
-                System.out.println("For Day: "+totaldays+"  Total Hours: "+emphrs);
-            }
-            int totalempwage = totalhrs * wph;
-            System.out.println("Monthly wage for an employee : " +totalempwage);
+                totalhrs++;
 
-        }
+                int a = (int) Math.floor(Math.random() * 10) % 3;
+                switch (a) {
+                    case attfull -> {
+                        System.out.println("Day " + totaldays + " Employee is present full day");
+                        dailyWages = wph * empfullhrs;
+                        System.out.println("Wages of the day " + totaldays + " is " + dailyWages);
+                        MonthlyWages = dailyWages + MonthlyWages;
+                        maxhrs = maxhrs + empfullhrs;
+                    }
+                    case attpart -> {
+                        System.out.println("Day " + totaldays + " Employee is present half day");
+                        dailyWages = wph * empparthrs;
+                        System.out.println("Wages of the day " + totaldays + " is " + dailyWages);
+                        MonthlyWages = dailyWages + MonthlyWages;
+                        maxhrs = maxhrs + empparthrs;
+                    }
+                    default -> System.out.println("Day " + totaldays + " Employee is Absent");
+                }
+            }
+        System.out.println("Total working hours in the month: " + maxhrs);
+        System.out.println("Total employee wages for the month: " + MonthlyWages);
+    }
 }
