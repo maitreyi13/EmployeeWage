@@ -1,2 +1,2 @@
 # EmployeeWage
-Welcome to Employee Wage Computation Program
+Welcome to Day8 Employee Wage Computation Program
