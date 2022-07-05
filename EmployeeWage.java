@@ -4,19 +4,23 @@ public class EmployeeWage {
         public static final int attfull = 2;
         public static final int wph = 20;
         public static final int wdm = 20;
+        public static final int maxhrs = 100;
+
         public static void main(String[] args) {
-            int emphrs ,empwage; int totalempwage = 0;
-            for (int days = 1; days<=wdm; days++) {
+            int emphrs; int totaldays = 0; int totalhrs = 0;
+            while (totaldays<wdm && totalhrs<=maxhrs ) {
+                totaldays++;
                 int a = (int) Math.floor(Math.random() * 10) % 3;
                 emphrs = switch (a) {
                     case attfull -> 8;
                     case attpart -> 4;
                     default -> 0;
                 };
-                empwage = emphrs * wph;
-                totalempwage += empwage;
-                System.out.println("Daily wage for an employee : " + empwage);
+                totalhrs += emphrs;
+                System.out.println("For Day: "+totaldays+"  Total Hours: "+emphrs);
             }
-            System.out.println("Monthly wage for an employee : " + totalempwage);
+            int totalempwage = totalhrs * wph;
+            System.out.println("Monthly wage for an employee : " +totalempwage);
+
         }
 }
