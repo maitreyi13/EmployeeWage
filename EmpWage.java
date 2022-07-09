@@ -16,6 +16,5 @@ public class EmpWage {
         EmployeeWage TCS = new EmployeeWage();
         TCS.EmpWage(28,12,6,25,180);
         System.out.println("********************************************");
-
     }
 }
